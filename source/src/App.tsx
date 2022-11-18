@@ -15,8 +15,12 @@ const App: React.FC = () => {
   const ref = useRef(null);
   const file = useRef<HTMLInputElement>(null)
 
-  const handleFile = (value: string) => {
-    if (value !== "") setUrl(value);
+  const handleFile = (value: FileList | null) => {
+    if (value?.length && value.length > 0) {
+      const url = URL.createObjectURL(value[0])
+      console.log(url)
+      setUrl(url);
+    };
   }
 
   const handleAlert = () => {
@@ -38,7 +42,7 @@ const App: React.FC = () => {
         </div>
         <div className='bg-primary px-1 select-none w-fit ml-0 hover:ml-2' onClick={() => file.current?.click()}>
           {' > '} File
-          <input type='file' className=' hidden' ref={file} accept="image/png, image/jpeg" onChange={(v) => handleFile(v.target.value)}></input>
+          <input type='file' className=' hidden' ref={file} multiple={false} accept="image/png, image/jpeg" onChange={(v) => handleFile(v.target.files)}></input>
         </div>
         <div className='bg-primary px-1 select-none w-fit ml-0 hover:ml-2' onClick={() => handleAlert()}>
           {' > '} Url
