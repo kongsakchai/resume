@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'IBM';
+  src: url('./assets/fonts/IBMPlexMono-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'IBM';
+  src: url('./assets/fonts/IBMPlexMono-Bold.ttf');
+  font-weight: 700;
+}
+
+
+:root {
+  font-family: 'IBM', Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: white;
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: white;
+  overflow: auto;
+}
