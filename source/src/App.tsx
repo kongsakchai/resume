@@ -31,7 +31,7 @@ const App: React.FC = () => {
   return (
     <div className='relative w-full h-full'>
       <div ref={ref}><Resume url={url} /></div>
-      <div className='absolute text-topic text-left top-0 -left-[140px] flex flex-col gap-5'>
+      <div className='lg:absolute fixed text-topic text-left lg:top-0 top-5 lg:-left-[140px] left-5 flex flex-col gap-5'>
         <div className='bg-primary px-1 w-fit ml-0 hover:ml-2'>
           <ReactToPrint
             trigger={() => {
